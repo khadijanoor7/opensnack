@@ -1,0 +1,169 @@
+{
+  "pizzas": [
+    {
+      "id": 1,
+      "name": "Margherita",
+      "description": "Classic tomato sauce, fresh mozzarella, and basil",
+      "basePrice": 12.99,
+      "image": "https://images.unsplash.com/photo-1598023696416-0193a0bcd302?q=80&w=2136&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "ingredients": [1, 2, 3],
+      "category": "classic"
+    },
+    {
+      "id": 2,
+      "name": "Pepperoni",
+      "description": "Tomato sauce, mozzarella, and spicy pepperoni",
+      "basePrice": 15.99,
+      "image": "https://images.unsplash.com/photo-1628840042765-356cda07504e?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "ingredients": [1, 2, 4],
+      "category": "classic"
+    },
+    {
+      "id": 3,
+      "name": "BBQ Chicken",
+      "description": "BBQ sauce, grilled chicken, red onions, and cilantro",
+      "basePrice": 18.99,
+      "image": "https://images.unsplash.com/photo-1739643815373-72444e14c54b?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "ingredients": [5, 2, 6, 7, 8],
+      "category": "gourmet"
+    },
+    {
+      "id": 4,
+      "name": "Quattro Stagioni",
+      "description": "Four seasons pizza with mushrooms, artichokes, ham, and olives",
+      "basePrice": 19.99,
+      "image": "https://images.unsplash.com/photo-1585238342024-78d387f4a707?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "ingredients": [1, 2, 9, 10, 11, 12],
+      "category": "gourmet"
+    },
+    {
+      "id": 5,
+      "name": "Vegetarian Deluxe",
+      "description": "Bell peppers, mushrooms, onions, tomatoes, and black olives",
+      "basePrice": 16.99,
+      "image": "https://images.unsplash.com/photo-1722707757608-7da361644637?q=80&w=1569&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "ingredients": [1, 2, 9, 13, 14, 15, 12],
+      "category": "vegetarian"
+    },
+    {
+      "id": 6,
+      "name": "Meat Lovers",
+      "description": "Pepperoni, sausage, ham, and bacon",
+      "basePrice": 21.99,
+      "image": "https://images.unsplash.com/photo-1745031601356-b897d614f21f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "ingredients": [1, 2, 4, 16, 11, 17],
+      "category": "meat"
+    }
+  ],
+  "ingredients": [
+    { "id": 1, "name": "Tomato Sauce", "category": "sauce" },
+    { "id": 2, "name": "Mozzarella Cheese", "category": "cheese" },
+    { "id": 3, "name": "Fresh Basil", "category": "herb" },
+    { "id": 4, "name": "Pepperoni", "category": "meat" },
+    { "id": 5, "name": "BBQ Sauce", "category": "sauce" },
+    { "id": 6, "name": "Grilled Chicken", "category": "meat" },
+    { "id": 7, "name": "Red Onions", "category": "vegetable" },
+    { "id": 8, "name": "Cilantro", "category": "herb" },
+    { "id": 9, "name": "Mushrooms", "category": "vegetable" },
+    { "id": 10, "name": "Artichokes", "category": "vegetable" },
+    { "id": 11, "name": "Ham", "category": "meat" },
+    { "id": 12, "name": "Black Olives", "category": "vegetable" },
+    { "id": 13, "name": "Bell Peppers", "category": "vegetable" },
+    { "id": 14, "name": "Yellow Onions", "category": "vegetable" },
+    { "id": 15, "name": "Cherry Tomatoes", "category": "vegetable" },
+    { "id": 16, "name": "Italian Sausage", "category": "meat" },
+    { "id": 17, "name": "Bacon", "category": "meat" }
+  ],
+  "extras": [
+    {
+      "id": 1,
+      "name": "Extra Cheese",
+      "price": 2.5,
+      "category": "cheese",
+      "description": "Additional mozzarella cheese"
+    },
+    {
+      "id": 2,
+      "name": "Pepperoni",
+      "price": 3.0,
+      "category": "meat",
+      "description": "Spicy pepperoni slices"
+    },
+    {
+      "id": 3,
+      "name": "Mushrooms",
+      "price": 2.0,
+      "category": "vegetable",
+      "description": "Fresh button mushrooms"
+    },
+    {
+      "id": 4,
+      "name": "Italian Sausage",
+      "price": 3.5,
+      "category": "meat",
+      "description": "Seasoned Italian sausage"
+    },
+    {
+      "id": 5,
+      "name": "Bell Peppers",
+      "price": 2.0,
+      "category": "vegetable",
+      "description": "Fresh bell peppers"
+    },
+    {
+      "id": 6,
+      "name": "Olives",
+      "price": 2.25,
+      "category": "vegetable",
+      "description": "Black or green olives"
+    },
+    {
+      "id": 7,
+      "name": "Onions",
+      "price": 1.5,
+      "category": "vegetable",
+      "description": "Fresh onions"
+    },
+    {
+      "id": 8,
+      "name": "Bacon",
+      "price": 4.0,
+      "category": "meat",
+      "description": "Crispy bacon strips"
+    },
+    {
+      "id": 9,
+      "name": "Pineapple",
+      "price": 2.5,
+      "category": "fruit",
+      "description": "Sweet pineapple chunks"
+    },
+    {
+      "id": 10,
+      "name": "Jalapeños",
+      "price": 1.75,
+      "category": "vegetable",
+      "description": "Spicy jalapeño peppers"
+    },
+    {
+      "id": 11,
+      "name": "Garlic",
+      "price": 1.25,
+      "category": "herb",
+      "description": "Fresh minced garlic"
+    },
+    {
+      "id": 12,
+      "name": "Spinach",
+      "price": 2.25,
+      "category": "vegetable",
+      "description": "Fresh baby spinach"
+    }
+  ],
+  "sizes": [
+    { "id": 1, "name": "Small", "multiplier": 1.0, "diameter": "10\"" },
+    { "id": 2, "name": "Medium", "multiplier": 1.3, "diameter": "12\"" },
+    { "id": 3, "name": "Large", "multiplier": 1.6, "diameter": "14\"" },
+    { "id": 4, "name": "Extra Large", "multiplier": 2.0, "diameter": "16\"" }
+  ]
+}
