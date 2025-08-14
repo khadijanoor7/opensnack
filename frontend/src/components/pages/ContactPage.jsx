@@ -1,3 +1,5 @@
+import Card from "../ui/Card";
+
 const ContactPage = () => (
   <div className="container mx-auto px-4 py-8">
     <div className="max-w-4xl mx-auto">
@@ -10,7 +12,7 @@ const ContactPage = () => (
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Contact Info */}
-        <div className="bg-white rounded-lg shadow-md p-8">
+        <Card>
           <h2 className="text-2xl font-bold text-usersnack-dark mb-6 flex items-center">
             <svg
               className="w-6 h-6 mr-3 text-usersnack-primary"
@@ -61,10 +63,10 @@ const ContactPage = () => (
               </p>
             </div>
           </div>
-        </div>
+        </Card>
 
         {/* Business Hours */}
-        <div className="bg-white rounded-lg shadow-md p-8">
+        <Card>
           <h2 className="text-2xl font-bold text-usersnack-dark mb-6 flex items-center">
             <svg
               className="w-6 h-6 mr-3 text-usersnack-primary"
@@ -102,7 +104,7 @@ const ContactPage = () => (
               💡 Order online for faster service!
             </p>
           </div>
-        </div>
+        </Card>
       </div>
     </div>
   </div>

@@ -1,3 +1,6 @@
+import Card from "../ui/Card";
+import LoadingSpinner from "../ui/LoadingSpinner";
+
 const PizzaOverview = () => {
   return (
     <div className="container mx-auto px-4 py-8">
@@ -9,25 +12,15 @@ const PizzaOverview = () => {
           Choose from our wide selection of freshly made pizzas
         </p>
 
-        <div className="bg-white rounded-lg shadow-md p-8">
+        <Card className="max-w-md mx-auto">
           <div className="text-gray-500">
-            <svg
-              className="w-16 h-16 mx-auto mb-4"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path
-                fillRule="evenodd"
-                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                clipRule="evenodd"
-              />
-            </svg>
-            <p className="text-lg">Pizza menu coming soon!</p>
+            <LoadingSpinner size="large" className="mx-auto mb-4" />
+            <p className="text-lg">Loading our delicious pizzas...</p>
             <p className="text-sm">
-              We're preparing something delicious for you.
+              We're preparing something amazing for you.
             </p>
           </div>
-        </div>
+        </Card>
       </div>
     </div>
   );

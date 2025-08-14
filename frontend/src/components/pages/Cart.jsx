@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
+import Button from "../ui/Button";
+import Card from "../ui/Card";
 
 const Cart = () => (
   <div className="container mx-auto px-4 py-8">
     <div className="text-center">
       <h1 className="text-3xl font-bold text-usersnack-dark mb-4">Your Cart</h1>
 
-      <div className="max-w-md mx-auto bg-white rounded-lg shadow-md p-8">
+      <Card className="max-w-md mx-auto">
         <div className="text-gray-600 mb-6">
           <svg
             className="w-16 h-16 mx-auto mb-4 text-gray-300"
@@ -22,11 +24,9 @@ const Cart = () => (
           <p className="text-sm">Add some delicious pizzas to get started!</p>
         </div>
         <Link to="/">
-          <button className="w-full bg-usersnack-primary hover:bg-orange-600 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200">
-            Browse Pizzas
-          </button>
+          <Button className="w-full">Browse Pizzas</Button>
         </Link>
-      </div>
+      </Card>
     </div>
   </div>
 );

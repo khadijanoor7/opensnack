@@ -1,3 +1,5 @@
+import Card from "../ui/Card";
+
 const AboutPage = () => (
   <div className="container mx-auto px-4 py-8">
     <div className="max-w-4xl mx-auto">
@@ -10,7 +12,7 @@ const AboutPage = () => (
         </p>
       </div>
 
-      <div className="bg-white rounded-lg shadow-md p-8 mb-8">
+      <Card className="mb-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div>
             <div className="flex items-center mb-6">
@@ -45,7 +47,7 @@ const AboutPage = () => (
             />
           </div>
         </div>
-      </div>
+      </Card>
     </div>
   </div>
 );
