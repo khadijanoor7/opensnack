@@ -1,40 +1,27 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./components/layout/Header";
+import Footer from "./components/layout/Footer";
+import PizzaOverview from "./components/pages/PizzaOverview";
+import AboutPage from "./components/pages/AboutPage";
+import ContactPage from "./components/pages/ContactPage";
+import Cart from "./components/pages/Cart";
 
 function App() {
   return (
     <Router>
       <div className="min-h-screen bg-gray-50 flex flex-col">
-        <header className="bg-white shadow-md py-4">
-          <div className="container mx-auto px-4">
-            <h1 className="text-2xl font-bold text-usersnack-dark">
-              Usersnack Pizza
-            </h1>
-          </div>
-        </header>
+        <Header />
 
-        <main className="flex-1 flex items-center justify-center">
+        <main className="flex-1">
           <Routes>
-            <Route
-              path="/"
-              element={
-                <div className="text-center">
-                  <h2 className="text-4xl font-bold text-usersnack-primary mb-4">
-                    Welcome to Usersnack Pizza!
-                  </h2>
-                  <p className="text-gray-600 text-lg">
-                    Delicious pizzas delivered with passion
-                  </p>
-                </div>
-              }
-            />
+            <Route path="/" element={<PizzaOverview />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/cart" element={<Cart />} />
           </Routes>
         </main>
 
-        <footer className="bg-usersnack-dark text-white py-4">
-          <div className="container mx-auto px-4 text-center">
-            <p>© 2025 Usersnack Pizza. All rights reserved.</p>
-          </div>
-        </footer>
+        <Footer />
       </div>
     </Router>
   );
