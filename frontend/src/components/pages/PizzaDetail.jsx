@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import { calculatePizzaPrice } from "../../utils/pricing";
@@ -9,7 +9,7 @@ import SizeSelector from "../pizza/SizeSelector";
 import ExtrasSelector from "../pizza/ExtrasSelector";
 import QuantitySelector from "../cart/QuantitySelector";
 import usePizzaData from "../../hooks/usePizzaData";
-// import useCart from "../../hooks/useCart";
+import useCart from "../../hooks/useCart";
 
 import Button from "../ui/Button";
 import Card from "../ui/Card";
@@ -32,7 +32,7 @@ const PizzaDetail = () => {
     error,
   } = usePizzaData();
 
-  // const { addToCart } = useCart();
+  const { addToCart } = useCart();
   const pizza = getPizzaById(id);
 
   const handleExtraToggle = (extraId) => {

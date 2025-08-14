@@ -1,34 +1,64 @@
-import { Link } from "react-router-dom";
-import Button from "../ui/Button";
-import Card from "../ui/Card";
+import useCart from "../../hooks/useCart";
+import CartItem from "../cart/CartItem";
+import CartSummary from "../cart/CartSummary";
+import EmptyCart from "../cart/EmptyCart";
 
-const Cart = () => (
-  <div className="container mx-auto px-4 py-8">
-    <div className="text-center">
-      <h1 className="text-3xl font-bold text-usersnack-dark mb-4">Your Cart</h1>
+const Cart = () => {
+  const {
+    cartItems,
+    removeFromCart,
+    updateQuantity,
+    clearCart,
+    getTotalPrice,
+  } = useCart();
 
-      <Card className="max-w-md mx-auto">
-        <div className="text-gray-600 mb-6">
-          <svg
-            className="w-16 h-16 mx-auto mb-4 text-gray-300"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-          >
-            <path
-              fillRule="evenodd"
-              d="M10 2L3 7v11a2 2 0 002 2h10a2 2 0 002-2V7l-7-5zM8 8a1 1 0 000 2h4a1 1 0 100-2H8z"
-              clipRule="evenodd"
+  const placeOrder = () => {
+    if (cartItems.length === 0) return;
+
+    const order = {
+      id: Date.now(),
+      items: cartItems,
+      total: getTotalPrice(),
+      timestamp: new Date().toISOString(),
+    };
+
+    console.log("Order placed:", order);
+    alert("Order placed successfully! (This is a demo)");
+    clearCart();
+  };
+
+  if (cartItems.length === 0) {
+    return <EmptyCart />;
+  }
+
+  return (
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-3xl font-bold text-usersnack-dark mb-8">
+        Your Cart ({cartItems.length} items)
+      </h1>
+
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="lg:col-span-2 space-y-4">
+          {cartItems.map((item) => (
+            <CartItem
+              key={item.id}
+              item={item}
+              onUpdateQuantity={updateQuantity}
+              onRemove={removeFromCart}
             />
-          </svg>
-          <p className="text-lg">Your cart is empty</p>
-          <p className="text-sm">Add some delicious pizzas to get started!</p>
+          ))}
         </div>
-        <Link to="/">
-          <Button className="w-full">Browse Pizzas</Button>
-        </Link>
-      </Card>
+
+        <div className="lg:col-span-1">
+          <CartSummary
+            subtotal={getTotalPrice()}
+            onPlaceOrder={placeOrder}
+            onClearCart={clearCart}
+          />
+        </div>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default Cart;
