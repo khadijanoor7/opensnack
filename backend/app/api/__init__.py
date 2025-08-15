@@ -2,6 +2,8 @@ from importlib import import_module
 
 V1_BLUEPRINTS = [
     ("app.api.v1.health.routes", "health_v1_bp", "/health"),
+    ("app.api.v1.menu.routes", "menu_v1_bp", "/menu"),
+    ("app.api.v1.orders.routes", "orders_v1_bp", "/orders"),
 ]
 
 
