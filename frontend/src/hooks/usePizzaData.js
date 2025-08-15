@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import data from "../data/data.json";
+import apiClient from "../utils/apiClient";
 
 const usePizzaData = () => {
   const [pizzas, setPizzas] = useState([]);
@@ -10,23 +10,31 @@ const usePizzaData = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    try {
-      // Simulate API call delay (remove in production)
-      const loadData = async () => {
-        await new Promise((resolve) => setTimeout(resolve, 100));
+    const fetchMenuData = async () => {
+      setLoading(true);
+      try {
+        const [ingredientsRes, extrasRes, sizesRes, pizzaRes] =
+          await Promise.all([
+            apiClient.get(`menu/ingredients`),
+            apiClient.get(`menu/extras`),
+            apiClient.get(`menu/sizes`),
+            apiClient.get(`menu/items`),
+          ]);
 
-        setPizzas(data.pizzas || []);
-        setIngredients(data.ingredients || []);
-        setExtras(data.extras || []);
-        setSizes(data.sizes || []);
+        setIngredients(ingredientsRes.data);
+        setExtras(extrasRes.data);
+        setSizes(sizesRes.data);
+        setPizzas(pizzaRes.data);
+        setError(null);
+      } catch (err) {
+        console.error(err);
+        setError("Failed to load menu data");
+      } finally {
         setLoading(false);
-      };
+      }
+    };
 
-      loadData();
-    } catch (err) {
-      setError("Failed to load pizza data");
-      setLoading(false);
-    }
+    fetchMenuData();
   }, []);
 
   const getPizzaById = (id) => {

@@ -73,23 +73,26 @@ src/
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - npm or yarn
 
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone <repository-url>
    cd order-manager-frontend
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Start the development server**
+
    ```bash
    npm run dev
    ```
@@ -107,12 +110,14 @@ src/
 ## 🎨 Design System
 
 ### Colors
+
 - **Primary**: `#FF6B35` (Usersnack Orange)
 - **Secondary**: `#F7931E` (Light Orange)
 - **Dark**: `#2C3E50` (Dark Blue)
 - **Light**: `#ECF0F1` (Light Gray)
 
 ### Components
+
 - **Buttons**: Primary, Secondary, and Outline variants
 - **Cards**: Consistent shadow and padding
 - **Badges**: Category-colored badges
@@ -121,12 +126,14 @@ src/
 ## 📱 Features Breakdown
 
 ### Pizza Overview
+
 - Grid layout of all pizzas
 - Category filtering (Classic, Gourmet, Vegetarian, Meat Lovers)
 - Responsive card design with hover effects
 - Loading states and error handling
 
 ### Pizza Detail
+
 - Detailed pizza information
 - Size selection with price updates
 - Extra toppings with individual pricing
@@ -135,6 +142,7 @@ src/
 - Add to cart functionality
 
 ### Shopping Cart
+
 - Item management (add, remove, update quantities)
 - Order summary with tax and delivery calculations
 - Empty cart state
@@ -142,6 +150,7 @@ src/
 - Persistent storage
 
 ### Additional Pages
+
 - **About**: Brand story and values
 - **Contact**: Business information and hours
 - **Responsive**: Mobile-optimized layouts
@@ -151,33 +160,42 @@ src/
 ### Custom Hooks
 
 #### `useCart`
+
 Manages cart state with localStorage persistence
+
 ```javascript
-const { cartItems, addToCart, removeFromCart, updateQuantity, clearCart } = useCart();
+const { cartItems, addToCart, removeFromCart, updateQuantity, clearCart } =
+  useCart();
 ```
 
 #### `usePizzaData`
+
 Handles pizza data with loading states
+
 ```javascript
 const { pizzas, ingredients, extras, sizes, loading, error } = usePizzaData();
 ```
 
 #### `useLocalStorage`
+
 Generic localStorage hook with cross-tab sync
+
 ```javascript
-const [value, setValue] = useLocalStorage('key', defaultValue);
+const [value, setValue] = useLocalStorage("key", defaultValue);
 ```
 
 ### Utility Functions
 
 #### Pricing Utils
+
 ```javascript
-import { calculatePizzaPrice, calculateOrderTotal } from './utils/pricing';
+import { calculatePizzaPrice, calculateOrderTotal } from "./utils/pricing";
 ```
 
 #### Formatting Utils
+
 ```javascript
-import { formatPrice } from './utils/formatting';
+import { formatPrice } from "./utils/formatting";
 ```
 
 ## 📋 Future Enhancements
@@ -187,7 +205,6 @@ import { formatPrice } from './utils/formatting';
 - [ ] Payment integration (Stripe/PayPal)
 - [ ] Real-time order status updates
 - [ ] Admin panel for menu management
-- [ ] Backend API integration
 - [ ] Push notifications
 - [ ] Favorites and wishlists
 - [ ] Customer reviews and ratings
@@ -197,4 +214,5 @@ import { formatPrice } from './utils/formatting';
 - [ ] Social media integration
 
 ### Menu Data
+
 Update pizza offerings in `src/data/data.json`

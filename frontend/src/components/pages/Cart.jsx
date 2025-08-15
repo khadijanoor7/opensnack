@@ -1,7 +1,11 @@
+import apiClient from "../../utils/apiClient";
 import useCart from "../../hooks/useCart";
 import CartItem from "../cart/CartItem";
 import CartSummary from "../cart/CartSummary";
 import EmptyCart from "../cart/EmptyCart";
+import toast from "react-hot-toast";
+import { calculateTax } from "../../utils/pricing";
+import { DELIVERY_FEE, TAX_RATE } from "../../utils/constants";
 
 const Cart = () => {
   const {
@@ -12,19 +16,32 @@ const Cart = () => {
     getTotalPrice,
   } = useCart();
 
-  const placeOrder = () => {
+  const placeOrder = async () => {
     if (cartItems.length === 0) return;
 
-    const order = {
-      id: Date.now(),
-      items: cartItems,
-      total: getTotalPrice(),
-      timestamp: new Date().toISOString(),
+    const items = cartItems.map((ci) => ({
+      item_id: ci.pizzaId,
+      size_id: ci.size?.id,
+      quantity: ci.quantity,
+      extras: ci.extras?.map((e) => e.id) ?? [],
+    }));
+
+    const subtotal = cartItems.reduce((sum, item) => sum + item.price, 0);
+
+    const payload = {
+      items,
+      delivery_fee: DELIVERY_FEE,
+      tax: calculateTax(subtotal, TAX_RATE),
     };
 
-    console.log("Order placed:", order);
-    alert("Order placed successfully! (This is a demo)");
-    clearCart();
+    try {
+      await apiClient.post("/orders", payload);
+      toast.success("Order placed successfully!");
+      clearCart();
+    } catch (err) {
+      console.error("Order failed:", err);
+      toast.fail("Something went wrong. Please try again.");
+    }
   };
 
   if (cartItems.length === 0) {

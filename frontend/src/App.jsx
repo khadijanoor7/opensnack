@@ -6,11 +6,13 @@ import PizzaDetail from "./components/pages/PizzaDetail";
 import Cart from "./components/pages/Cart";
 import AboutPage from "./components/pages/AboutPage";
 import ContactPage from "./components/pages/ContactPage";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
     <Router>
       <div className="min-h-screen bg-gray-50 flex flex-col">
+        <Toaster position="top-right" reverseOrder={false} />
         <Header />
 
         <main className="flex-1">

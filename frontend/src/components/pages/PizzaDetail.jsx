@@ -70,7 +70,6 @@ const PizzaDetail = () => {
     };
 
     addToCart(orderItem);
-    alert(`${pizza.name} added to cart!`);
 
     // Reset quantity to 1 after successfully adding to cart
     setQuantity(1);
