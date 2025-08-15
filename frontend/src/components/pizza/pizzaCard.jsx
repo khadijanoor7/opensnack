@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Badge from "../ui/Badge";
 import Button from "../ui/Button";
 import Card from "../ui/Card";
-import PizzaImage from "./PIzzaImage";
+import PizzaImage from "./PizzaImage";
 import { formatPrice } from "../../utils/formatting";
 
 const PizzaCard = ({ pizza }) => {
