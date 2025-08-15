@@ -22,12 +22,9 @@ def create_app() -> Flask:
         app,
         resources={
             r"/api/*": {
-                "origins": app.config.get("CORS_ORIGIN"),
+                "origins": "*",
                 "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
                 "allow_headers": ["Content-Type", "Authorization"],
-                "supports_credentials": app.config.get(
-                    "CORS_SUPPORTS_CREDENTIALS", True
-                ),
             }
         },
     )
