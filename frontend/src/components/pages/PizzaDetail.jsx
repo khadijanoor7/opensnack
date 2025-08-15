@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import toast from "react-hot-toast";
 
 import { calculatePizzaPrice } from "../../utils/pricing";
 import { formatPrice } from "../../utils/formatting";
@@ -70,6 +71,7 @@ const PizzaDetail = () => {
     };
 
     addToCart(orderItem);
+    toast.success(`${pizza.name} added to cart!`);
 
     // Reset quantity to 1 after successfully adding to cart
     setQuantity(1);

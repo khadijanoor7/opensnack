@@ -82,7 +82,7 @@ src/
 
    ```bash
    git clone <repository-url>
-   cd order-manager-frontend
+   cd frontend
    ```
 
 2. **Install dependencies**
